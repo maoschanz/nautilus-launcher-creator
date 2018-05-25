@@ -53,9 +53,9 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         if not len(items):
             return False
         
-        for item in items:
-            if not GLib.file_test(item.get_name(), GLib.FileTest.IS_EXECUTABLE):
-                return False
+#        for item in items:
+#            if not GLib.file_test(item.get_name(), GLib.FileTest.IS_EXECUTABLE):
+#                return False
                 
         for item in items:
             if item.is_gone():
