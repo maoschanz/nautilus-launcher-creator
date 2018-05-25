@@ -25,11 +25,17 @@ msgstr "Description"
 msgid "Categories"
 msgstr "Catégories"
 
-msgid "Next"
-msgstr "Suivant"
-
-msgid "Previous"
-msgstr "Précédent"
-
 msgid "Create"
 msgstr "Créer"
+
+msgid "Pictures"
+msgstr "Images"
+
+msgid "Select an icon"
+msgstr "Sélectionner un icône"
+
+msgid "Select an icon from your current theme"
+msgstr "Sélectionner un icône depuis votre thème"
+
+msgid "Select a custom picture as icon"
+msgstr "Sélectionner une image personnalisée comme icône"
