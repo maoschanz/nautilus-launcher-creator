@@ -1,37 +1,36 @@
 # -*- coding: utf-8 -*-
-# --- 0.1
+# "Create .desktop file" 0.1
 # Copyright (C) 2012-2015 Marcos Alvarez Costales https://launchpad.net/~costales
 #
-# --- is free software; you can redistribute it and/or modify
+# "Create .desktop file" is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 # 
-# --- is distributed in the hope that it will be useful,
+# "Create .desktop file" is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 # 
 # You should have received a copy of the GNU General Public License
-# along with ---; if not, see http://www.gnu.org/licenses
+# along with "Create .desktop file"; if not, see http://www.gnu.org/licenses
 # for more information.
 
 import os
-#import gi
+import gi
 import gettext
 import urllib
-#gi.require_version('Nautilus', '3.14')
+gi.require_version('Nautilus', '3.0')
 from gi.repository import Nautilus, Gtk, GObject, Gio, GLib
 
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))
 LOCALE_PATH = os.path.join(BASE_PATH, 'locale')
-
 try:
-	import gettext
-	gettext.bindtextdomain('create-desktop-file', LOCALE_PATH)
-	_ = lambda s: gettext.dgettext('create-desktop-file', s)
+    import gettext
+    gettext.bindtextdomain('create-desktop-file', LOCALE_PATH)
+    _ = lambda s: gettext.dgettext('create-desktop-file', s)
 except:
-	_ = lambda s: s
+    _ = lambda s: s
 
 APPS_DIRECTORY = os.path.join(os.getenv('HOME'), '.local/share/applications/')
 
@@ -55,14 +54,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
             return False
         
         for item in items:
-            # GNOME can only handle files
-            if item.get_uri_scheme() != 'file':
-                return False
-            # Not folders
-            if item.is_directory():
-                return False
-            # Only executable for now
-            if not item.is_executable():
+            if not GLib.file_test(item.get_name(), GLib.FileTest.IS_EXECUTABLE):
                 return False
                 
         for item in items:
@@ -84,20 +76,30 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         headerbar = Gtk.HeaderBar()
         headerbar.set_title(_("Create a launcher"))
         headerbar.set_show_close_button(True)
-        self.cancelButton = Gtk.Button(_("Previous"))
-        headerbar.pack_start(self.cancelButton)
-        self.nextButton = Gtk.Button(_("Next"))
+        
+        self.previousButton = Gtk.Button()
+        image = Gtk.Image()
+        image.set_from_icon_name('go-previous-symbolic', Gtk.IconSize.BUTTON)
+        self.previousButton.add(image)
+        headerbar.pack_start(self.previousButton)
+        
+        self.nextButton = Gtk.Button()
+        image = Gtk.Image()
+        image.set_from_icon_name('go-next-symbolic', Gtk.IconSize.BUTTON)
+        self.nextButton.add(image)
+        headerbar.pack_end(self.nextButton)
+        
         self.createButton = Gtk.Button(_("Create"))
         self.createButton.get_style_context().add_class('suggested-action')
         headerbar.pack_end(self.nextButton)
         headerbar.pack_end(self.createButton)
         
-        self.cancelButton.connect('clicked', self.on_previous)
+        self.previousButton.connect('clicked', self.on_previous)
         self.nextButton.connect('clicked', self.on_next)
         self.createButton.connect('clicked', self.on_create)
         
         self.win  = Gtk.Window()
-        self.win .set_default_size(250, 30)
+        self.win .set_default_size(400, 30)
         self.win .set_border_width(10)
         self.win .set_position(Gtk.WindowPosition.CENTER)
         self.win .set_titlebar(headerbar)
@@ -151,7 +153,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         main_box.show_all()
         self.second_box.props.visible = False
         self.createButton.props.visible = False
-        self.cancelButton.props.visible = False
+        self.previousButton.props.visible = False
         
         Gtk.main()
     
@@ -162,7 +164,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         self.icon_string = ''
         
         self.createButton.props.visible = True
-        self.cancelButton.props.visible = True
+        self.previousButton.props.visible = True
         self.second_box.show_all()
         
         self.nextButton.props.visible = False
@@ -171,7 +173,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
     def on_previous(self, btn):
         
         self.createButton.props.visible = False
-        self.cancelButton.props.visible = False
+        self.previousButton.props.visible = False
         self.second_box.props.visible = False
         
         self.nextButton.props.visible = True
@@ -198,7 +200,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
         onlyPictures = Gtk.FileFilter()
-        onlyPictures.set_name("Icons")
+        onlyPictures.set_name("Pictures")
         onlyPictures.add_mime_type('image/*')
         file_chooser.set_filter(onlyPictures)
         file_chooser.set_current_folder(path)
@@ -213,7 +215,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         
     def on_icon_custom(self, btn):
         # Building a FileChooserDialog for pictures
-        file_chooser = Gtk.FileChooserDialog(_("Select a picture"), self.win,
+        file_chooser = Gtk.FileChooserDialog(_("Select an icon"), self.win,
             Gtk.FileChooserAction.OPEN,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
