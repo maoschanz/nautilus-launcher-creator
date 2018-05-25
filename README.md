@@ -5,7 +5,7 @@ A nautilus extension providing the ability to create a launcher (.desktop file) 
 ## How it works
 
 - Right-click on an executable file
-- Give a name, optionnaly a short description and a `;` separated list of [categories](https://standards.freedesktop.org/menu-spec/latest/apa.html)
+- Give a name, optionnaly a short description and a list of [categories](https://standards.freedesktop.org/menu-spec/latest/apa.html) separated with `;`
 
 ![](https://i.imgur.com/1NqbxCR.png)
 
@@ -19,12 +19,12 @@ A nautilus extension providing the ability to create a launcher (.desktop file) 
 
 ## How to install
 
+Install `python-nautilus` (that's the name on Debian at least).
+
 Download the code, make `install.sh` executable, and execute it (from a terminal opened in the adequate folder).
 
-Close Nautilus (or kill it), and it should works.
-
-Maybe some "nautilus-python" package is needed, i don't really remember
+Close Nautilus (or kill it), and then it should works.
 
 ----
 
-This shit is gpl v3 but idk where github hide their "add the fucking license" button
+This is gpl v3 but idk where github hide their "add the fucking license" button
