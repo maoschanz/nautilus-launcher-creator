@@ -5,7 +5,7 @@ A nautilus extension providing the ability to create a launcher (.desktop file) 
 ## How it works
 
 - Right-click on an executable file
-- Give a name, optionnaly a short description and a list of [categories](https://standards.freedesktop.org/menu-spec/latest/apa.html) separated with `;`
+- Give a name, optionally a short description and a list of [categories](https://standards.freedesktop.org/menu-spec/latest/apa.html) separated with `;`
 
 ![](https://i.imgur.com/1NqbxCR.png)
 
