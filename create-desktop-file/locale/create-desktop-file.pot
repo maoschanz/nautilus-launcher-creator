@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-03 18:48+0100\n"
+"PO-Revision-Date: 2018-03-05 16:47+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Create a launcher"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Pictures"
+msgstr ""
+
+msgid "Select an icon"
+msgstr ""
+
+msgid "Select an icon from your current theme"
+msgstr ""
+
+msgid "Select a custom picture as icon"
+msgstr ""
