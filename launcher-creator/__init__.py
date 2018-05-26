@@ -91,7 +91,6 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         
         self.createButton = Gtk.Button(_("Create"))
         self.createButton.get_style_context().add_class('suggested-action')
-        headerbar.pack_end(self.nextButton)
         headerbar.pack_end(self.createButton)
         
         self.previousButton.connect('clicked', self.on_previous)
@@ -99,11 +98,11 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         self.createButton.connect('clicked', self.on_create)
         
         self.win  = Gtk.Window()
-        self.win .set_default_size(400, 30)
-        self.win .set_border_width(10)
-        self.win .set_position(Gtk.WindowPosition.CENTER)
-        self.win .set_titlebar(headerbar)
-        self.win .set_resizable(True)
+        self.win.set_default_size(400, 30)
+        self.win.set_border_width(10)
+        self.win.set_position(Gtk.WindowPosition.CENTER)
+        self.win.set_titlebar(headerbar)
+        self.win.set_resizable(True)
         
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
         self.first_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
@@ -112,6 +111,18 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         self.name_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
         self.description_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
         self.categories_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
+        
+        #------------------------------
+        self.categories_box.set_tooltip_text(_("List of categories, with a \";\" after each one."))
+        help_about_categories = Gtk.LinkButton('https://standards.freedesktop.org/menu-spec/latest/apa.html')
+        help_about_categories.set_label('?')
+        
+#       # AudioVideo;Audio;Video;Development;Education;Game;Graphics;Network;Office;Science;Settings;System;
+#        self.add_cat_button = Gtk.Button('+')
+#        self.add_cat_popover = Gtk.Popover()
+#        self.add_cat_popover.set_relative_to(self.add_cat_button)
+        
+        #------------------------------
         
         name_label = Gtk.Label(_("Name"))
         description_label = Gtk.Label(_("Description"))
@@ -134,6 +145,8 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
         self.name_box.pack_end(self.name_entry, expand=False, fill=False, padding=0)
         self.description_box.pack_end(self.description_entry, expand=False, fill=False, padding=0)
         self.categories_box.pack_end(self.categories_entry, expand=False, fill=False, padding=0)
+        self.categories_box.pack_end(help_about_categories, expand=False, fill=False, padding=0)
+#        self.categories_box.pack_end(self.add_cat_button, expand=False, fill=False, padding=0) # FIXME box + linked
         
         self.first_box.add(self.name_box)
         self.first_box.add(self.description_box)
