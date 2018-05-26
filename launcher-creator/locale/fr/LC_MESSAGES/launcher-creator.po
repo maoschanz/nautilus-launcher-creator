@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-03 18:48+0100\n"
+"PO-Revision-Date: 2018-03-05 16:47+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language: fr\n"
+
+msgid "Create a launcher"
+msgstr "Créer un lanceur"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Categories"
+msgstr "Catégories"
+
+msgid "Create"
+msgstr "Créer"
+
+msgid "Pictures"
+msgstr "Images"
+
+msgid "Select an icon"
+msgstr "Sélectionner un icône"
+
+msgid "Select an icon from your current theme"
+msgstr "Sélectionner un icône depuis votre thème"
+
+msgid "Select a custom picture as icon"
+msgstr "Sélectionner une image personnalisée comme icône"
