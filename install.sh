@@ -13,8 +13,8 @@ if (( $EUID == 0 )); then
 	
 	echo "Installing plugin files in /usr/share/nautilus-python/extensions/"
 
-	cp create-desktop-file.py /usr/share/nautilus-python/extensions/create-desktop-file.py
-	cp -r create-desktop-file /usr/share/nautilus-python/extensions
+	cp launcher-creator.py /usr/share/nautilus-python/extensions/launcher-creator.py
+	cp -r launcher-creator /usr/share/nautilus-python/extensions
 else
 	echo "Checking if adequate folders exist..."
 	
@@ -27,8 +27,8 @@ else
 
 	echo "Installing plugin files in ~/.local/share/nautilus-python/extensions"
 
-	cp create-desktop-file.py ~/.local/share/nautilus-python/extensions/create-desktop-file.py
-	cp -r create-desktop-file ~/.local/share/nautilus-python/extensions
+	cp launcher-creator.py ~/.local/share/nautilus-python/extensions/launcher-creator.py
+	cp -r launcher-creator ~/.local/share/nautilus-python/extensions
 	
 fi
 	
