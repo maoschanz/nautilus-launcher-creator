@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if (( $EUID == 0 )); then
 	echo "Checking if adequate folders exist..."
 	
@@ -29,7 +28,6 @@ else
 
 	cp launcher-creator.py ~/.local/share/nautilus-python/extensions/launcher-creator.py
 	cp -r launcher-creator ~/.local/share/nautilus-python/extensions
-	
 fi
 	
 exit 0
