@@ -4,5 +4,4 @@
 # This file just calls the actual extension which is in the directory.
 
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))
-
 import BASE_PATH + '/launcher-creator/__init__.py'

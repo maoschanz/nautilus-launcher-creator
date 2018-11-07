@@ -16,10 +16,7 @@
 # along with "Create .desktop file"; if not, see http://www.gnu.org/licenses
 # for more information.
 
-import os
-import gi
-import gettext
-import urllib
+import os, gi, gettext, urllib
 gi.require_version('Nautilus', '3.0')
 from gi.repository import Nautilus, Gtk, GObject, Gio, GLib
 

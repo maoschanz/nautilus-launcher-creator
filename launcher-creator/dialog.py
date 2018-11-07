@@ -119,7 +119,6 @@ class LauncherCreatorWindow():
 		return page_grid
 		
 	def build_options_page(self):
-		
 		page_grid = Gtk.Grid(column_spacing=20, row_spacing=20, margin=20, row_homogeneous=False, column_homogeneous=False)
 		
 		description_label = Gtk.Label(_("Description"))
@@ -173,7 +172,6 @@ class LauncherCreatorWindow():
 		return page_grid
 		
 	def build_icon_page(self):
-		
 		page_grid = Gtk.Grid(column_spacing=20, row_spacing=20, margin=20, column_homogeneous=False)
 		
 		self.icon_preview = Gtk.Image()
@@ -194,10 +192,11 @@ class LauncherCreatorWindow():
 		return page_grid
 		
 	def build_summary_page(self):
-		
-		page_box = Gtk.Box(margin=10)
+		page_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, margin=10, spacing=10)
+		self.launcher_path_entry = Gtk.Entry()
 		self.textview = Gtk.TextView(expand=True)
 		self.textview.set_accepts_tab(True)
+		page_box.add(self.launcher_path_entry)
 		page_box.add(self.textview)
 		
 		return page_box
@@ -269,11 +268,15 @@ class LauncherCreatorWindow():
 		file_chooser.destroy()
 		
 	def add_category(self, b):
+		if self.categories_entry.get_text() == '':
+			return
 		self.categories.append(self.categories_entry.get_text())
 		self.build_c_list()
 		self.categories_entry.set_text('')
 		
 	def add_keyword(self, b):
+		if self.keywords_entry.get_text() == '':
+			return
 		self.keywords.append(self.keywords_entry.get_text())
 		self.build_k_list()
 		self.keywords_entry.set_text('')
@@ -296,9 +299,6 @@ class LauncherCreatorWindow():
 			row = Gtk.ListBoxRow()
 			row_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
 			row_box.pack_start(Gtk.Label(cat), expand=False, fill=False, padding=0)
-#			destroy_btn = Gtk.Button.new_from_icon_name('edit-delete-symbolic', Gtk.IconSize.BUTTON)
-#			row_box.pack_end(destroy_btn, expand=False, fill=False, padding=0)
-#			destroy_btn.connect('clicked', self.destroy_c_list) # TODO
 			row.add(row_box)
 			self.categories_list.prepend(row)
 		self.categories_list.show_all()
@@ -311,9 +311,6 @@ class LauncherCreatorWindow():
 			row = Gtk.ListBoxRow()
 			row_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
 			row_box.pack_start(Gtk.Label(cat), expand=False, fill=False, padding=0)
-#			destroy_btn = Gtk.Button.new_from_icon_name('edit-delete-symbolic', Gtk.IconSize.BUTTON)
-#			row_box.pack_end(destroy_btn, expand=False, fill=False, padding=0)
-#			destroy_btn.connect('clicked', self.destroy_k_list) # TODO
 			row.add(row_box)
 			self.keywords_list.prepend(row)
 		self.keywords_list.show_all()
@@ -329,11 +326,12 @@ class LauncherCreatorWindow():
 			self.ass.set_page_complete(self.intro_page, True)
 
 	def on_apply(self, ass):
-		
 		if self.ass.get_current_page() == 0:
 			self.name = self.name_entry.get_text()
 			if self.app_btn.get_active():
 				self.launcher_type = 'Application'
+				self.categories_box.set_sensitive(True)
+				self.keywords_box.set_sensitive(True)
 			elif self.link_btn.get_active():
 				self.launcher_type = 'Link'
 				self.categories_box.set_sensitive(False)
@@ -347,14 +345,13 @@ class LauncherCreatorWindow():
 			self.description = self.description_entry.get_text()
 		
 		elif self.ass.get_current_page() == 2:
-			text = '#!/usr/bin/env xdg-open\n\n[Desktop Entry]\nName=' + self.name
+			self.launcher_path_entry.set_text(self.launcher_path)
+			text = '[Desktop Entry]\nName=' + self.name
 			text += '\nType=' + self.launcher_type
 			if self.launcher_type == 'Application':
 				text += '\nExec=' + self.execpath
 			else:
 				text += '\nURL=file://' + urllib.pathname2url(self.execpath)
-			
-			
 			if self.description != '':
 				text += '\nComment=' + self.description
 			if self.icon_string != '':
@@ -363,16 +360,16 @@ class LauncherCreatorWindow():
 				text += '\nCategories=' + ';'.join(self.categories) + ';'
 			if self.keywords != []:
 				text += '\nKeywords=' + ';'.join(self.keywords) + ';'
-			
 			self.textview.get_buffer().set_text(text)
 		
 		elif self.ass.get_current_page() == 3:
+			self.launcher_path = self.launcher_path_entry.get_text()
 			text = self.textview.get_buffer().get_text( self.textview.get_buffer().get_start_iter(), \
-				self.textview.get_buffer().get_end_iter(), False)			
+				self.textview.get_buffer().get_end_iter(), False)
 			Gio.File.new_for_path(self.launcher_path)
 			newfile = open(self.launcher_path, 'w')
 			newfile.write(text)
 			newfile.close()
 			self.ass.close()
 		
-		
+#----------------------------------------
