@@ -61,7 +61,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
 			else:
 				self.type = 'Link'
 				
-		for item in items:
+		for item in items: # XXX how useful ?
 			if item.is_gone():
 				continue
 			self.execpath = urllib.unquote(item.get_uri()[7:])
@@ -76,10 +76,7 @@ class CreateLauncherMenu(GObject.GObject, Nautilus.MenuProvider):
 		return top_menuitem,
 	
 	def open_dialog(self, btn):
-		
-		self.win = LauncherCreatorWindow(self.type, self.execpath)
-		self.win.ass.show_all()
-		self.win.ass.present()
-	
+		win = LauncherCreatorWindow(self.type, self.execpath)
+		win.run()
 
 
