@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Generating .pot file..."
-xgettext --files-from=files-list --output=launcher-creator/locale/launcher-creator.pot
+echo "Generating .pot file…"
+xgettext --files-from=POTFILES --output=launcher-creator/locale/launcher-creator.pot
 
 IFS='
 '

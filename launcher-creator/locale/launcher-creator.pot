@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-12 22:14+0200\n"
+"POT-Creation-Date: 2019-03-27 02:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,90 +17,98 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: launcher-creator/__init__.py:77
+#: launcher-creator/__init__.py:74 launcher-creator/dialog.ui:3
 msgid "Create a launcher"
 msgstr ""
 
-#: launcher-creator/dialog.py:42
-msgid "Launcher"
-msgstr ""
-
-#: launcher-creator/dialog.py:47
-msgid "Options"
-msgstr ""
-
-#: launcher-creator/dialog.py:53
-msgid "Icon"
-msgstr ""
-
-#: launcher-creator/dialog.py:59
-msgid "Summary"
-msgstr ""
-
-#: launcher-creator/dialog.py:70
-msgid "Name"
-msgstr ""
-
-#: launcher-creator/dialog.py:73
-msgid "Type"
-msgstr ""
-
-#: launcher-creator/dialog.py:75
-msgid "Application"
-msgstr ""
-
-#: launcher-creator/dialog.py:76
-msgid "Link"
-msgstr ""
-
-#: launcher-creator/dialog.py:83
-msgid "Target path"
-msgstr ""
-
-#: launcher-creator/dialog.py:87 launcher-creator/dialog.py:262
+#: launcher-creator/dialog.py:77
 msgid "Launcher path"
 msgstr ""
 
-#: launcher-creator/dialog.py:90
-msgid "Browse"
-msgstr ""
-
-#: launcher-creator/dialog.py:125
-msgid "Description"
-msgstr ""
-
-#: launcher-creator/dialog.py:127
-msgid "Categories"
-msgstr ""
-
-#: launcher-creator/dialog.py:128
-msgid "Keywords"
-msgstr ""
-
-#: launcher-creator/dialog.py:139
-msgid "Applications can be organized in categories in the system menus."
-msgstr ""
-
-#: launcher-creator/dialog.py:140
-msgid "Applications can be found from a keyword with the system search."
-msgstr ""
-
-#: launcher-creator/dialog.py:156 launcher-creator/dialog.py:157
-msgid "Reset"
-msgstr ""
-
-#: launcher-creator/dialog.py:184
-msgid "Select an icon from your current theme"
-msgstr ""
-
-#: launcher-creator/dialog.py:185
-msgid "Select a custom picture as icon"
-msgstr ""
-
-#: launcher-creator/dialog.py:224 launcher-creator/dialog.py:244
+#: launcher-creator/dialog.py:102 launcher-creator/dialog.py:122
 msgid "Select an icon"
 msgstr ""
 
-#: launcher-creator/dialog.py:229 launcher-creator/dialog.py:249
+#: launcher-creator/dialog.py:107 launcher-creator/dialog.py:127
 msgid "Pictures"
+msgstr ""
+
+#: launcher-creator/dialog.ui:24
+msgid "Launcher's name"
+msgstr ""
+
+#: launcher-creator/dialog.ui:45
+msgid "Description"
+msgstr ""
+
+#: launcher-creator/dialog.ui:77
+msgid "Target's path"
+msgstr ""
+
+#: launcher-creator/dialog.ui:98
+msgid "Type"
+msgstr ""
+
+#: launcher-creator/dialog.ui:113
+msgid "Application"
+msgstr ""
+
+#: launcher-creator/dialog.ui:120
+msgid "Link"
+msgstr ""
+
+#: launcher-creator/dialog.ui:145
+msgid "Launcher's path"
+msgstr ""
+
+#: launcher-creator/dialog.ui:163
+msgid "Browse"
+msgstr ""
+
+#: launcher-creator/dialog.ui:181
+msgid "Basic"
+msgstr ""
+
+#: launcher-creator/dialog.ui:204
+msgid "Select an icon from your current theme"
+msgstr ""
+
+#: launcher-creator/dialog.ui:210
+msgid "Select a custom picture as icon"
+msgstr ""
+
+#: launcher-creator/dialog.ui:216
+msgid "Icon"
+msgstr ""
+
+#: launcher-creator/dialog.ui:232
+msgid "Keywords"
+msgstr ""
+
+#: launcher-creator/dialog.ui:253
+msgid "Categories"
+msgstr ""
+
+#: launcher-creator/dialog.ui:274
+msgid "MIME types"
+msgstr ""
+
+#: launcher-creator/dialog.ui:293
+msgid "Advanced"
+msgstr ""
+
+#: launcher-creator/dialog.ui:303
+msgid "Cancel"
+msgstr ""
+
+#: launcher-creator/dialog.ui:309
+msgid "Create"
+msgstr ""
+
+#: launcher-creator/dialog.ui:310
+msgid "Create a launcher with these settings"
+msgstr ""
+
+#: launcher-creator/listwidget.ui:19
+msgid "Add"
 msgstr ""

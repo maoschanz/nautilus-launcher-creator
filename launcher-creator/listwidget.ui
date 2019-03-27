@@ -1,0 +1,32 @@
+<interface domain="launcher-creator">
+	<object class="GtkBox" id="list-widget">
+		<child>
+			<object class="GtkListBox" id="list_box">
+			</object>
+		</child>
+
+		<child>
+			<object class="GtkBox">
+				<property name="expand">True</property>
+				<style><class name="linked"/></style>
+				<child>
+					<object class="GtkEntry" id="add_entry">
+						<property name="expand">True</property>
+					</object>
+				</child>
+				<child>
+					<object class="GtkButton" id="add_btn">
+						<property name="tooltip_text" translatable="yes">Add</property>
+						<child>
+							<object class="GtkImage">
+								<property name="icon-name">list-add-symbolic</property>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+
+	</object>
+</interface>
+

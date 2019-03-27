@@ -1,11 +1,11 @@
-<interface>
-    <object class="GtkDialog" id="dialog">
-        <property name="title" translatable="yes">Create a launcher</property>
-        <property name="use-header-bar">1</property>
-        <child internal-child="vbox">
-            <object class="GtkBox" id="search_vbox">
-                <property name="border-width">6</property>
-                <child>
+<interface domain="launcher-creator">
+	<object class="GtkDialog" id="dialog">
+		<property name="title" translatable="yes">Create a launcher</property>
+		<property name="use-header-bar">1</property>
+		<child internal-child="vbox">
+			<object class="GtkBox" id="search_vbox">
+				<property name="border-width">6</property>
+				<child>
 					<object class="GtkStack" id="main_stack">
 						<property name="transition-type">slide-left-right</property>
 
@@ -29,9 +29,7 @@
 									</packing>
 								</child>
 								<child>
-									<object class="GtkEntry" id="name_entry">
-										<property name="expand">False</property>
-									</object>
+									<object class="GtkEntry" id="name_entry"></object>
 									<packing>
 										<property name="left-attach">1</property>
 										<property name="top-attach">0</property>
@@ -50,9 +48,7 @@
 									</packing>
 								</child>
 								<child>
-									<object class="GtkEntry" id="description_entry">
-										<property name="expand">True</property>
-									</object>
+									<object class="GtkEntry" id="description_entry"></object>
 									<packing>
 										<property name="left-attach">1</property>
 										<property name="top-attach">1</property>
@@ -60,9 +56,7 @@
 								</child>
 
 								<child>
-									<object class="GtkSeparator">
-										<property name="expand">False</property>
-									</object>
+									<object class="GtkSeparator"></object>
 									<packing>
 										<property name="left-attach">0</property>
 										<property name="top-attach">2</property>
@@ -82,9 +76,7 @@
 									</packing>
 								</child>
 								<child>
-									<object class="GtkEntry" id="target_entry">
-										<property name="expand">True</property>
-									</object>
+									<object class="GtkEntry" id="target_entry"></object>
 									<packing>
 										<property name="left-attach">1</property>
 										<property name="top-attach">3</property>
@@ -104,9 +96,8 @@
 								</child>
 								<child>
 									<object class="GtkBox">
-										<property name="expand">False</property>
 										<property name="homogeneous">True</property>
-                        				<style><class name="linked"/></style>
+										<style><class name="linked"/></style>
 										<child>
 											<object class="GtkRadioButton" id="type_btn1">
 												<property name="draw-indicator">False</property>
@@ -128,9 +119,7 @@
 								</child>
 
 								<child>
-									<object class="GtkSeparator">
-										<property name="expand">False</property>
-									</object>
+									<object class="GtkSeparator"></object>
 									<packing>
 										<property name="left-attach">0</property>
 										<property name="top-attach">5</property>
@@ -151,16 +140,13 @@
 								</child>
 								<child>
 									<object class="GtkBox">
-										<property name="expand">False</property>
-                        				<style><class name="linked"/></style>
+										<style><class name="linked"/></style>
 										<child>
-											<object class="GtkEntry" id="path_entry">
-												<property name="expand">True</property>
-											</object>
+											<object class="GtkEntry" id="path_entry"></object>
 										</child>
 										<child>
-											<object class="GtkButton">
-								                <property name="tooltip_text" translatable="yes">Browse</property>
+											<object class="GtkButton" id="path_btn">
+												<property name="tooltip_text" translatable="yes">Browse</property>
 												<child>
 													<object class="GtkImage">
 														<property name="icon-name">document-open-symbolic</property>
@@ -237,8 +223,8 @@
 									</packing>
 								</child>
 								<child>
-									<object class="GtkComboBoxText" id="ertyguy">
-										<property name="expand">False</property>
+									<object class="GtkFrame" id="keywords_frame">
+										<property name="visible">False</property>
 									</object>
 									<packing>
 										<property name="left-attach">1</property>
@@ -258,7 +244,7 @@
 									</packing>
 								</child>
 								<child>
-									<object class="GtkComboBoxText" id="erfyuy">
+									<object class="GtkFrame" id="categories_frame">
 										<property name="expand">False</property>
 									</object>
 									<packing>
@@ -279,7 +265,7 @@
 									</packing>
 								</child>
 								<child>
-									<object class="GtkComboBoxText" id="ertpppy">
+									<object class="GtkFrame" id="types_frame">
 										<property name="expand">False</property>
 									</object>
 									<packing>
@@ -296,29 +282,25 @@
 						
 					</object>
 				</child>
-            </object>
-        </child>
-        <child type="action">
-            <object class="GtkButton" id="cancel_button">
-                <property name="label" translatable="yes">Cancel</property>
-                <property name="visible">True</property>
-            </object>
-        </child>
-        <child type="action">
-            <object class="GtkButton" id="create_button">
-                <property name="can-default">True</property>
-                <property name="label" translatable="yes">Create</property>
-                <property name="tooltip-text" translatable="yes">Create a launcher with these settings</property>
-                <property name="visible">True</property>
-                <style>
-                    <class name="suggested-action"/>
-                </style>
-            </object>
-        </child>
-        <action-widgets>
-            <action-widget response="-6">cancel_button</action-widget>
-            <action-widget response="1" default="yes">create_button</action-widget>
-        </action-widgets>
-    </object>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="cancel_button">
+				<property name="label" translatable="yes">Cancel</property>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="create_button">
+				<property name="can-default">True</property>
+				<property name="label" translatable="yes">Create</property>
+				<property name="tooltip-text" translatable="yes">Create a launcher with these settings</property>
+				<style><class name="suggested-action"/></style>
+			</object>
+		</child>
+		<action-widgets>
+			<action-widget response="-6">cancel_button</action-widget>
+			<action-widget response="1" default="yes">create_button</action-widget>
+		</action-widgets>
+	</object>
 </interface>
 

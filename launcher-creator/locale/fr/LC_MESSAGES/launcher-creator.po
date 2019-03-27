@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-12 22:14+0200\n"
+"POT-Creation-Date: 2019-03-27 02:42+0100\n"
 "PO-Revision-Date: 2018-03-05 16:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,94 +13,123 @@ msgstr ""
 "X-Generator: Poedit 1.8.11\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: launcher-creator/__init__.py:77
+#: launcher-creator/__init__.py:74 launcher-creator/dialog.ui:3
 msgid "Create a launcher"
 msgstr "Créer un lanceur"
 
-#: launcher-creator/dialog.py:42
-msgid "Launcher"
-msgstr "Lanceur"
-
-#: launcher-creator/dialog.py:47
-msgid "Options"
-msgstr "Options"
-
-#: launcher-creator/dialog.py:53
-msgid "Icon"
-msgstr "Icône"
-
-#: launcher-creator/dialog.py:59
-msgid "Summary"
-msgstr "Résumé"
-
-#: launcher-creator/dialog.py:70
-msgid "Name"
-msgstr "Nom"
-
-#: launcher-creator/dialog.py:73
-msgid "Type"
-msgstr "Type"
-
-#: launcher-creator/dialog.py:75
-msgid "Application"
-msgstr "Application"
-
-#: launcher-creator/dialog.py:76
-msgid "Link"
-msgstr "Lien"
-
-#: launcher-creator/dialog.py:83
-msgid "Target path"
-msgstr "Chemin de la cible"
-
-#: launcher-creator/dialog.py:87 launcher-creator/dialog.py:262
+#: launcher-creator/dialog.py:77
 msgid "Launcher path"
 msgstr "Chemin du lanceur"
 
-#: launcher-creator/dialog.py:90
-msgid "Browse"
-msgstr "Parcourir"
-
-#: launcher-creator/dialog.py:125
-msgid "Description"
-msgstr "Description"
-
-#: launcher-creator/dialog.py:127
-msgid "Categories"
-msgstr "Catégories"
-
-#: launcher-creator/dialog.py:128
-msgid "Keywords"
-msgstr "Mots-clés"
-
-#: launcher-creator/dialog.py:139
-msgid "Applications can be organized in categories in the system menus."
-msgstr ""
-"Les applications peuvent être organisées en catégories dans les menus du "
-"système."
-
-#: launcher-creator/dialog.py:140
-msgid "Applications can be found from a keyword with the system search."
-msgstr ""
-"Les applications peuvent être trouvées à partir de mots-clés avec la "
-"recherche du système."
-
-#: launcher-creator/dialog.py:156 launcher-creator/dialog.py:157
-msgid "Reset"
-msgstr "Réinitialiser"
-
-#: launcher-creator/dialog.py:184
-msgid "Select an icon from your current theme"
-msgstr "Sélectionner un icône depuis votre thème"
-
-#: launcher-creator/dialog.py:185
-msgid "Select a custom picture as icon"
-msgstr "Sélectionner une image personnalisée comme icône"
-
-#: launcher-creator/dialog.py:224 launcher-creator/dialog.py:244
+#: launcher-creator/dialog.py:102 launcher-creator/dialog.py:122
 msgid "Select an icon"
 msgstr "Sélectionner un icône"
 
-#: launcher-creator/dialog.py:229 launcher-creator/dialog.py:249
+#: launcher-creator/dialog.py:107 launcher-creator/dialog.py:127
 msgid "Pictures"
 msgstr "Images"
+
+#: launcher-creator/dialog.ui:24
+msgid "Launcher's name"
+msgstr "Nom du lanceur"
+
+#: launcher-creator/dialog.ui:45
+msgid "Description"
+msgstr "Description"
+
+#: launcher-creator/dialog.ui:77
+msgid "Target's path"
+msgstr "Chemin de la cible"
+
+#: launcher-creator/dialog.ui:98
+msgid "Type"
+msgstr "Type"
+
+#: launcher-creator/dialog.ui:113
+msgid "Application"
+msgstr "Application"
+
+#: launcher-creator/dialog.ui:120
+msgid "Link"
+msgstr "Lien"
+
+#: launcher-creator/dialog.ui:145
+msgid "Launcher's path"
+msgstr "Chemin du lanceur"
+
+#: launcher-creator/dialog.ui:163
+msgid "Browse"
+msgstr "Parcourir"
+
+#: launcher-creator/dialog.ui:181
+msgid "Basic"
+msgstr "Basique"
+
+#: launcher-creator/dialog.ui:204
+msgid "Select an icon from your current theme"
+msgstr "Sélectionner un icône depuis votre thème"
+
+#: launcher-creator/dialog.ui:210
+msgid "Select a custom picture as icon"
+msgstr "Sélectionner une image personnalisée comme icône"
+
+#: launcher-creator/dialog.ui:216
+msgid "Icon"
+msgstr "Icône"
+
+#: launcher-creator/dialog.ui:232
+msgid "Keywords"
+msgstr "Mots-clés"
+
+#: launcher-creator/dialog.ui:253
+msgid "Categories"
+msgstr "Catégories"
+
+#: launcher-creator/dialog.ui:274
+msgid "MIME types"
+msgstr "Types MIME"
+
+#: launcher-creator/dialog.ui:293
+msgid "Advanced"
+msgstr "Avancé"
+
+#: launcher-creator/dialog.ui:303
+msgid "Cancel"
+msgstr "Annuler"
+
+#: launcher-creator/dialog.ui:309
+msgid "Create"
+msgstr "Créer"
+
+#: launcher-creator/dialog.ui:310
+msgid "Create a launcher with these settings"
+msgstr "Créer un lanceur avec ces réglages"
+
+#: launcher-creator/listwidget.ui:19
+msgid "Add"
+msgstr "Ajouter"
+
+#~ msgid "Launcher"
+#~ msgstr "Lanceur"
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#~ msgid "Summary"
+#~ msgstr "Résumé"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "Applications can be organized in categories in the system menus."
+#~ msgstr ""
+#~ "Les applications peuvent être organisées en catégories dans les menus du "
+#~ "système."
+
+#~ msgid "Applications can be found from a keyword with the system search."
+#~ msgstr ""
+#~ "Les applications peuvent être trouvées à partir de mots-clés avec la "
+#~ "recherche du système."
+
+#~ msgid "Reset"
+#~ msgstr "Réinitialiser"
