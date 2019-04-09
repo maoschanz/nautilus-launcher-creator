@@ -22,9 +22,8 @@ A nautilus extension providing an advanced dialog in order to create a launcher 
 
 ## How to install
 
-Install `python-nautilus` (that's the name on Debian at least).
+- Install the package `python-nautilus` (it's its name on Debian at least).
+- Download the code, make `install.sh` executable, and execute it.
+- Quit (and restart) Nautilus, and then it should works.
 
-Download the code, make `install.sh` executable, and execute it (from a terminal opened in the adequate folder).
-
-Execute `nautilus -q` (quitting Nautilus), and then it should works.
 

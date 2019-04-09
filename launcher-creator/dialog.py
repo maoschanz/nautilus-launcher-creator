@@ -51,10 +51,23 @@ class LauncherCreatorWindow():
 		self.path_entry = builder.get_object('path_entry')
 		path_btn = builder.get_object('path_btn')
 		path_btn.connect('clicked', self.open_path_chooser)
+		
+		basename = self.execpath.split('/')[-1]
+		if self.launcher_type == 'Application':
+			self.type_btn_app.set_active(True)
+			filename = APPS_DIRECTORY + GLib.str_to_ascii(basename).replace(' ', '') + ".desktop"
+		elif self.launcher_type == 'Link':
+			self.type_btn_link.set_active(True)
+			filename = HOME_DIRECTORY + GLib.str_to_ascii(basename).replace(' ', '') + ".desktop"
+		self.path_entry.set_text(filename)
 
 		self.icon_image = builder.get_object('icon_image')
 		builder.get_object('icon_btn_theme').connect('clicked', self.on_icon_from_theme)
 		builder.get_object('icon_btn_custom').connect('clicked', self.on_icon_custom)
+
+#		self.name_entry.connect('notify::text', self.check_1st_page_completion)
+#		self.path_entry.connect('notify::text', self.check_1st_page_completion)
+#		self.fn_entry.connect('notify::text', self.check_1st_page_completion)
 
 	def run(self, *args):
 		self.dialog.show_all()
@@ -65,7 +78,23 @@ class LauncherCreatorWindow():
 			self.on_cancel()
 		self.destroy()
 
-	def on_create(self, *args):
+	def on_create(self, *args): # TODO
+#		self.launcher_path_entry.set_text(self.launcher_path)
+#		text = '[Desktop Entry]\nName=' + self.name
+#		text += '\nType=' + self.launcher_type
+#		if self.launcher_type == 'Application':
+#			text += '\nExec=' + self.execpath
+#		else:
+#			text += '\nURL=file://' + urllib.pathname2url(self.execpath)
+#		if self.description != '':
+#			text += '\nComment=' + self.description
+#		if self.icon_string != '':
+#			text += '\nIcon=' + self.icon_string
+#		if self.categories != []:
+#			text += '\nCategories=' + ';'.join(self.categories) + ';'
+#		if self.keywords != []:
+#			text += '\nKeywords=' + ';'.join(self.keywords) + ';'
+#		self.textview.get_buffer().set_text(text)
 		pass
 
 	def on_cancel(self, *args):

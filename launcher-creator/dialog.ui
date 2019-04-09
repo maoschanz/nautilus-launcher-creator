@@ -140,9 +140,12 @@
 								</child>
 								<child>
 									<object class="GtkBox">
+										<property name="expand">True</property>
 										<style><class name="linked"/></style>
 										<child>
-											<object class="GtkEntry" id="path_entry"></object>
+											<object class="GtkEntry" id="path_entry">
+												<property name="expand">True</property>
+											</object>
 										</child>
 										<child>
 											<object class="GtkButton" id="path_btn">
