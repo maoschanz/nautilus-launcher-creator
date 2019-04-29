@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-27 02:42+0100\n"
+"PO-Revision-Date: 2019-04-09 12:08+0200\n"
+"Language-Team: Dutch <vistausss@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl_NL\n"
+
+#: launcher-creator/__init__.py:74 launcher-creator/dialog.ui:3
+msgid "Create a launcher"
+msgstr "Starter creëren"
+
+#: launcher-creator/dialog.py:77
+msgid "Launcher path"
+msgstr "Pad naar starter"
+
+#: launcher-creator/dialog.py:102 launcher-creator/dialog.py:122
+msgid "Select an icon"
+msgstr "Kies een pictogram"
+
+#: launcher-creator/dialog.py:107 launcher-creator/dialog.py:127
+msgid "Pictures"
+msgstr "Afbeeldingen"
+
+#: launcher-creator/dialog.ui:24
+msgid "Launcher's name"
+msgstr "Naam van starter"
+
+#: launcher-creator/dialog.ui:45
+msgid "Description"
+msgstr "Omschrijving"
+
+#: launcher-creator/dialog.ui:77
+msgid "Target's path"
+msgstr "Doelpad"
+
+#: launcher-creator/dialog.ui:98
+msgid "Type"
+msgstr "Soort"
+
+#: launcher-creator/dialog.ui:113
+msgid "Application"
+msgstr "Toepassing"
+
+#: launcher-creator/dialog.ui:120
+msgid "Link"
+msgstr "Link"
+
+#: launcher-creator/dialog.ui:145
+msgid "Launcher's path"
+msgstr "Pad naar starter"
+
+#: launcher-creator/dialog.ui:163
+msgid "Browse"
+msgstr "Bladeren"
+
+#: launcher-creator/dialog.ui:181
+msgid "Basic"
+msgstr "Eenvoudig"
+
+#: launcher-creator/dialog.ui:204
+msgid "Select an icon from your current theme"
+msgstr "Kies een pictogram uit je huidige thema"
+
+#: launcher-creator/dialog.ui:210
+msgid "Select a custom picture as icon"
+msgstr "Kies een aangepaste afbeelding"
+
+#: launcher-creator/dialog.ui:216
+msgid "Icon"
+msgstr "Pictogram"
+
+#: launcher-creator/dialog.ui:232
+msgid "Keywords"
+msgstr "Trefwoorden"
+
+#: launcher-creator/dialog.ui:253
+msgid "Categories"
+msgstr "Categorieën"
+
+#: launcher-creator/dialog.ui:274
+msgid "MIME types"
+msgstr "MIME-types"
+
+#: launcher-creator/dialog.ui:293
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#: launcher-creator/dialog.ui:303
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: launcher-creator/dialog.ui:309
+msgid "Create"
+msgstr "Creëren"
+
+#: launcher-creator/dialog.ui:310
+msgid "Create a launcher with these settings"
+msgstr "Starter creëren met deze instellingen"
+
+#: launcher-creator/listwidget.ui:19
+msgid "Add"
+msgstr "Toevoegen"
