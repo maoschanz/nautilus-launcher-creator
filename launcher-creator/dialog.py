@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
-# "Nautilus Launcher Creator" 0.5
+#!/usr/bin/env python3
+
+# "Nautilus Launcher Creator" 0.x
 # Copyright (C) 2018 Romain F. T.
 
 import os
@@ -68,6 +69,21 @@ class LauncherCreatorWindow():
 #		self.name_entry.connect('notify::text', self.check_1st_page_completion)
 #		self.path_entry.connect('notify::text', self.check_1st_page_completion)
 #		self.fn_entry.connect('notify::text', self.check_1st_page_completion)
+
+		keywords_list = EditableList()
+		kw_frame = builder.get_object('keywords_frame')
+		kw_frame.add(keywords_list.get_widget())
+
+		categories_list = EditableList()
+		categories_frame = builder.get_object('categories_frame')
+		categories_frame.add(categories_list.get_widget())
+
+		types_list = EditableList()
+		types_frame = builder.get_object('types_frame')
+		types_frame.add(types_list.get_widget())
+		
+		
+		
 
 	def run(self, *args):
 		self.dialog.show_all()
@@ -166,6 +182,51 @@ class LauncherCreatorWindow():
 			                          file_chooser.get_filename(), 48, 48, True)
 			self.icon_image.set_from_pixbuf(pixbuf)
 		file_chooser.destroy()
+
+
+class EditableList():
+	def __init__(self):
+		builder4 = Gtk.Builder.new_from_file(os.path.join(BASE_PATH, 'listwidget.ui'))
+		self.widget = builder4.get_object('list-widget')
+		self.list_box = builder4.get_object('list_box')
+		self.entry = builder4.get_object('add_entry')
+		builder4.get_object('add_btn').connect('clicked', self.add_row)
+		
+	
+	def get_widget(self):
+		return self.widget
+	
+	def add_row(self, *args):
+		text = self.entry.get_text()
+		if text == '':
+			return
+		new_row = DeletableRow(text)
+		self.list_box.prepend(new_row)
+		self.list_box.show_all()
+		self.entry.set_text('')
+	
+	def get_string(self):
+		for row in self.list_box.get_children():
+			print(row)
+
+class DeletableRow(Gtk.Box):
+	__gtype_name__ = 'DeletableRow'
+	
+	def __init__(self, row_label):
+		super(DeletableRow, self).__init__()
+#		super().__init__() # For some reason, python3 isn't the interpreter here
+		
+		new_label = Gtk.Label(label=row_label)
+		del_btn = Gtk.Button.new_from_icon_name('edit-delete-symbolic', Gtk.IconSize.BUTTON)
+		del_btn.set_relief(Gtk.ReliefStyle.NONE)
+		del_btn.connect('clicked', self.destroy2)
+		self.pack_start(new_label, False, False, 0)
+		self.pack_end(del_btn, False, False, 0)
+		
+	def destroy2(self, *args):
+		self.get_parent().destroy()
+		
+		
 
 
 

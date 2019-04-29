@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+
 # "Nautilus Launcher Creator" 0.5
 # Copyright (C) 2018 Romain F. T.
 #

@@ -1,13 +1,11 @@
 <interface domain="launcher-creator">
 	<object class="GtkBox" id="list-widget">
-		<child>
-			<object class="GtkListBox" id="list_box">
-			</object>
-		</child>
+		<property name="orientation">vertical</property>
+		<property name="margin">10</property>
 
 		<child>
 			<object class="GtkBox">
-				<property name="expand">True</property>
+				<property name="expand">False</property>
 				<style><class name="linked"/></style>
 				<child>
 					<object class="GtkEntry" id="add_entry">
@@ -24,6 +22,12 @@
 						</child>
 					</object>
 				</child>
+			</object>
+		</child>
+
+		<child>
+			<object class="GtkListBox" id="list_box">
+				<property name="selection-mode">none</property>
 			</object>
 		</child>
 
